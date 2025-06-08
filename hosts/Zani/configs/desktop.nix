@@ -13,13 +13,12 @@
     variant = "";
   };
 
-  # Enable automatic login for the user
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "luna";
+  # Remove automatic login for the user (require password at login)
+  services.displayManager.autoLogin.enable = false;
 
-  # Workaround for GNOME autologin
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
+  # Remove workaround for GNOME autologin (not needed if autologin is disabled)
+  systemd.services."getty@tty1".enable = true;
+  systemd.services."autovt@tty1".enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager)
   # services.xserver.libinput.enable = true;

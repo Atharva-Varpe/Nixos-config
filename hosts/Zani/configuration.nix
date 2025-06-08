@@ -20,5 +20,6 @@
     ./configs/programs.nix
     ./configs/services.nix
     ./configs/system.nix
+    ./configs/nvidia.nix
   ];
 }
