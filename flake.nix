@@ -44,26 +44,6 @@
       };
     };
 
-    # Standalone home-manager configurations (no sudo required!)
-    homeConfigurations = {
-      "luna" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs; };
-        modules = [
-          ./home/home.nix
-          nixcord.homeModules.nixcord
-          spicetify-nix.homeManagerModules.spicetify
-          # Allow unfree packages (needed for VSCode, Discord, etc.)
-          {
-            nixpkgs.config.allowUnfree = true;
-            nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
-              "vscode"
-              "discord"
-              "spotify"
-            ];
-          }
-        ];
-      };
-    };
+
   };
 }

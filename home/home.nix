@@ -6,8 +6,7 @@
   home.username = "luna";
   home.homeDirectory = "/home/luna";
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  # Home Manager is managed by NixOS module integration
 
   # Import all the modules
   imports = [
@@ -42,6 +41,7 @@
     fd
     bat
     eza
+    python3Packages.pygments
 
     # Media
     vlc

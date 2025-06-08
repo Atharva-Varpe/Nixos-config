@@ -6,8 +6,14 @@
     # Network utilities
     wget
     curl
-    
+
     # Text editor
     vim
+
+    # for nvidia gpu checking
+    pciutils
+    # for intel
+    intel-gpu-tools
+
   ];
 }

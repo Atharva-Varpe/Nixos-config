@@ -53,10 +53,16 @@
     };
   };
 
-  # Install GNOME utilities
+  # Install GNOME utilities and extensions
   home.packages = with pkgs; [
     gnome-tweaks      # For manual font/scaling adjustments
     dconf-editor      # For advanced dconf editing
     gnome-extension-manager  # For managing GNOME extensions
+
+    # GNOME Extensions
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.just-perfection
+    gnomeExtensions.freon
+    gnomeExtensions.clipboard-indicator
   ];
 }
