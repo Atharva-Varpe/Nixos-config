@@ -17,6 +17,7 @@
     ./modules/starship.nix
     ./modules/utilities.nix
     ./modules/btop.nix
+    ./modules/python.nix
     ./programs/vscode.nix
     ./programs/kitty.nix
     ./programs/games.nix
@@ -34,10 +35,24 @@
     cargo
     gcc
 
+    # Python development
+    pyenv
+    jupyter
+    python3Packages.jupyterlab
+    python3Packages.notebook
+    python3Packages.ipython
+    python3Packages.pip
+    python3Packages.virtualenv
+    python3Packages.numpy
+    python3Packages.pandas
+    python3Packages.matplotlib
+    python3Packages.seaborn
+    python3Packages.scikit-learn
+    python3Packages.requests
+
     # Utilities
     tree
-    unzip
-    zip
+    p7zip
     ripgrep
     fd
     bat

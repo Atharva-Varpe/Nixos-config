@@ -31,6 +31,12 @@
           version = "0.3.3";
           sha256 = "sha256-0T6suUgUpVZj8DQPl5cKiKtiSTPkg0HnPIzUM5qc978=";
         }
+        {
+          name = "vscode-power-mode";
+          publisher = "hoovercj";
+          version = "3.0.2";
+          sha256 = "sha256-ZE+9Y7131jt9nVKkTVNvYdYYh+JH6D6qDqOzLBEUhZY=";
+        }
       ];
 
       userSettings = {
@@ -98,6 +104,23 @@
       "telemetry.telemetryLevel" = "off";
       "update.mode" = "none";
       "extensions.autoUpdate" = false;
+
+      # Power Mode settings for cursor trails
+      "powermode.enabled" = true;
+      "powermode.presets" = "particles";
+      "powermode.enableShake" = false;
+      "powermode.enableStatusBarComboCounter" = false;
+      "powermode.enableStatusBarComboTimer" = false;
+      "powermode.comboThreshold" = 0;
+      "powermode.explosionSize" = 1;
+      "powermode.explosionFrequency" = 1;
+      "powermode.explosionOffset" = 0.35;
+      "powermode.explosions.size" = 5;
+      "powermode.explosions.frequency" = 1;
+      "powermode.explosions.offset" = 0.35;
+      "powermode.explosions.explosionOrder" = "random";
+      "powermode.explosions.backgroundMode" = "mask";
+      "powermode.explosions.duration" = 1000;
 
         # Prettier settings
         "prettier.tabWidth" = 2;
