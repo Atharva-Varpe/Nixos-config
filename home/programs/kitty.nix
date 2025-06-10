@@ -9,7 +9,7 @@
       shell = "/etc/profiles/per-user/luna/bin/zsh";
 
       # Font configuration
-      font_family = "Jetbrains Font Mono";
+      font_family = "JetBrainsMono Nerd Font";
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";
@@ -56,7 +56,6 @@
       placement_strategy = "center";
       active_border_color = "#F5E0DC";
       inactive_border_color = "#6C7086";
-      show_hyperlinks = true;
       hide_window_decorations = true;
 
       # Transparency

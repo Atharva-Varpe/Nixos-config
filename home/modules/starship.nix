@@ -245,7 +245,7 @@
 
       # Git branch
       git_branch = {
-        format = "on [\$symbol\$branch](\$style)(:\$remote](\$style)) ";
+        format = "on [\$symbol\$branch](\$style)([\$remote](\$style)) ";
         symbol = " ";
         style = "bold purple";
         truncation_length = 9223372036854775807;

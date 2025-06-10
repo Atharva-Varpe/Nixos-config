@@ -8,7 +8,7 @@
       # Font settings (adjust sizes as needed)
       font-name = "Cantarell 11";              # Main UI font
       document-font-name = "Cantarell 11";     # Document font
-      monospace-font-name = "JetBrains Mono 10"; # Terminal/code font
+      monospace-font-name = "JetBrains Mono 11"; # Terminal/code font (using regular JetBrains Mono)
 
       # Text scaling factor (equivalent to changing font size in GNOME Tweaks)
       # Common values:
@@ -46,9 +46,21 @@
       hinting = "slight";
     };
 
+    # Shell settings
+    "org/gnome/shell" = {
+      # Hide top bar when applications are in full screen
+      disable-top-bar = false;  # Keep top bar normally visible
+    };
+
+    # Shell interface settings
+    "org/gnome/shell/interface" = {
+      # Hide overview on startup
+      show-overview-on-startup = true;
+    };
+
     # Optional: Terminal font settings (if using GNOME Terminal)
     "org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9" = {
-      font = "JetBrains Mono 11";
+      font = "JetBrains Mono 12";  # Using regular JetBrains Mono for terminal
       use-system-font = false;
     };
   };

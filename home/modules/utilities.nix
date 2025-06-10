@@ -12,8 +12,6 @@
 
     # for nvidia gpu checking
     pciutils
-    # for intel
-    intel-gpu-tools
 
   ];
 }

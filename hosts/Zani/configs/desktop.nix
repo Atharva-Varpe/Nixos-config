@@ -3,8 +3,8 @@
 {
   # Enable Wayland with GNOME
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
+  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.wayland = true;
   services.desktopManager.gnome.enable = true;
 
   # Configure keymap (works for both X11 and Wayland)

@@ -6,11 +6,11 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    
+
     # Oh My Zsh configuration
     oh-my-zsh = {
       enable = true;
-      plugins = [ 
+      plugins = [
         "git"
         "sudo"
         "docker"
@@ -21,11 +21,10 @@
         "common-aliases"
         "cp"
         "safe-paste"
-        "z"
       ];
       theme = ""; # We'll use starship instead
     };
-    
+
     # Shell aliases
     shellAliases = {
       ll = "ls -alF";
@@ -35,7 +34,7 @@
       grep = "grep --color=auto";
       fgrep = "fgrep --color=auto";
       egrep = "egrep --color=auto";
-      
+
       # Git aliases
       gs = "git status";
       ga = "git add";
@@ -44,30 +43,30 @@
       gl = "git pull";
       gd = "git diff";
       gco = "git checkout";
-      
+
       # Navigation
       ".." = "cd ..";
       "..." = "cd ../..";
       "...." = "cd ../../..";
-      
+
       # System
       h = "history";
       j = "jobs -l";
-      
+
       # NixOS specific
       nrs = "sudo nixos-rebuild switch --flake .";
       nrt = "sudo nixos-rebuild test --flake .";
       hms = "home-manager switch --flake .";
-      
+
       # Utility
       cat = "bat";
       find = "fd";
     };
-    
+
     # Additional configuration
     initContent = ''
       # Custom prompt setup is handled by starship
-      
+
       # History configuration
       HISTSIZE=10000
       SAVEHIST=10000
@@ -78,26 +77,26 @@
       setopt HIST_FIND_NO_DUPS
       setopt HIST_SAVE_NO_DUPS
       setopt HIST_BEEP
-      
+
       # Completion configuration
       autoload -U compinit && compinit
       zstyle ':completion:*' menu select
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-      
+
       # Key bindings
       bindkey "^[[A" history-beginning-search-backward
       bindkey "^[[B" history-beginning-search-forward
-      
+
       # Auto-ls after cd
       chpwd() {
         ls
       }
-      
+
       # Custom functions
       mkcd() {
         mkdir -p "$1" && cd "$1"
       }
-      
+
       # Extract function
       extract() {
         if [ -f $1 ] ; then
@@ -120,5 +119,11 @@
         fi
       }
     '';
+  };
+
+  # Zoxide configuration
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }

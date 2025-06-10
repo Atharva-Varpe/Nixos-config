@@ -16,6 +16,7 @@
     ./modules/zsh.nix
     ./modules/starship.nix
     ./modules/utilities.nix
+    ./modules/btop.nix
     ./programs/vscode.nix
     ./programs/kitty.nix
     ./programs/games.nix

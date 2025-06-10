@@ -24,12 +24,19 @@
 
         # Nix support
         bbenoist.nix
+      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        {
+          name = "tokyo-night-dark";
+          publisher = "drewxs";
+          version = "0.3.3";
+          sha256 = "sha256-0T6suUgUpVZj8DQPl5cKiKtiSTPkg0HnPIzUM5qc978=";
+        }
       ];
 
       userSettings = {
       # Editor settings
       "editor.fontSize" = 14;
-      "editor.fontFamily" = "'JetBrains Mono', 'Cascadia Code', 'Fira Code', Consolas, 'Courier New', monospace";
+      "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'JetBrains Mono', 'Cascadia Code', 'Fira Code', Consolas, 'Courier New', monospace";
       "editor.fontLigatures" = true;
       "editor.lineNumbers" = "on";
       "editor.minimap.enabled" = true;
@@ -46,14 +53,14 @@
       "editor.cursorSmoothCaretAnimation" = "on";
 
       # Workbench settings
-      "workbench.colorTheme" = "Dracula";
+      "workbench.colorTheme" = "Tokyo Night Dark";
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.startupEditor" = "newUntitledFile";
       "workbench.enableExperiments" = false;
 
       # Terminal settings
       "terminal.integrated.fontSize" = 14;
-      "terminal.integrated.fontFamily" = "'JetBrains Mono', 'Cascadia Code', monospace";
+      "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font', 'JetBrains Mono', 'Cascadia Code', monospace";
       "terminal.integrated.defaultProfile.linux" = "zsh";
       "terminal.integrated.cursorBlinking" = true;
       "terminal.integrated.cursorStyle" = "line";
