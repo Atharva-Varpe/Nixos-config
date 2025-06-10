@@ -30,25 +30,26 @@
   home.packages = with pkgs; [
     # Development tools
     nodejs
-    python3
     rustc
     cargo
     gcc
 
-    # Python development
+    # Python development environment
     pyenv
-    jupyter
-    python3Packages.jupyterlab
-    python3Packages.notebook
-    python3Packages.ipython
-    python3Packages.pip
-    python3Packages.virtualenv
-    python3Packages.numpy
-    python3Packages.pandas
-    python3Packages.matplotlib
-    python3Packages.seaborn
-    python3Packages.scikit-learn
-    python3Packages.requests
+    (python3.withPackages (ps: with ps; [
+      jupyter
+      jupyterlab
+      notebook
+      ipython
+      pip
+      virtualenv
+      numpy
+      pandas
+      matplotlib
+      seaborn
+      scikit-learn
+      requests
+    ]))
 
     # Utilities
     tree
@@ -57,7 +58,6 @@
     fd
     bat
     eza
-    python3Packages.pygments
 
     # Media
     vlc

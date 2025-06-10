@@ -7,15 +7,23 @@
   home.sessionVariables = {
     # Pyenv configuration
     PYENV_ROOT = "$HOME/.pyenv";
-    PATH = "$PYENV_ROOT/bin:$PATH";
 
     # Jupyter configuration
     JUPYTER_CONFIG_DIR = "$HOME/.jupyter";
     JUPYTER_DATA_DIR = "$HOME/.local/share/jupyter";
+
+    # Python path for VS Code and Jupyter
+    PYTHON_PATH = "/etc/profiles/per-user/luna/bin/python3";
   };
 
+  # Update PATH to include pyenv and ensure correct Python is found
+  home.sessionPath = [
+    "$HOME/.pyenv/bin"
+    "/etc/profiles/per-user/luna/bin"
+  ];
+
   # Shell initialization for pyenv
-  programs.zsh.initExtra = ''
+  programs.zsh.initContent = ''
     # Initialize pyenv if available
     if command -v pyenv 1>/dev/null 2>&1; then
       eval "$(pyenv init --path)"
@@ -26,6 +34,10 @@
     alias jlab="jupyter lab"
     alias jnb="jupyter notebook"
     alias jkernels="jupyter kernelspec list"
+
+    # Ensure correct Python is used
+    alias python="python3"
+    alias pip="pip3"
   '';
 
   # Git configuration for Jupyter notebooks
@@ -48,7 +60,7 @@
 
     # Interface
     c.LabApp.default_url = '/lab'
-    
+
     # Extensions
     c.LabApp.check_for_updates_url = None
   '';
