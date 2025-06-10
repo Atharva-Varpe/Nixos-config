@@ -35,22 +35,20 @@
       clean = "jupyter nbconvert --stdin --stdout --to notebook --ClearOutputPreprocessor.enabled=True";
       smudge = "cat";
     };
-  };
-
-  # Create Jupyter configuration directory
+  };  # Create Jupyter configuration directory
   home.file.".jupyter/jupyter_lab_config.py".text = ''
     # Jupyter Lab configuration
     c = get_config()
 
     # Security
-    c.ServerApp.token = ''
-    c.ServerApp.password = ''
+    c.ServerApp.token = ""
+    c.ServerApp.password = ""
     c.ServerApp.open_browser = True
     c.ServerApp.port = 8888
 
     # Interface
     c.LabApp.default_url = '/lab'
-
+    
     # Extensions
     c.LabApp.check_for_updates_url = None
   '';
